@@ -54,7 +54,7 @@ class ReadData extends Serializable {
     val start = LocalDate.of(2018, 1, 8)
     val end = LocalDate.of(2020, 1, 10)
 
-    val stocksDir = new File("/Users/leonardyuan/spark-2.4.5/test_folder/simple-project/data/stocks/")
+    val stocksDir = new File("/Users/leonardyuan/codebase/CSYE7200-Final/7200_Final_TechIndex/data/stocks/")
     val files = stocksDir.listFiles()
     val allStocks = files.iterator.flatMap { file =>
       try {
@@ -65,7 +65,7 @@ class ReadData extends Serializable {
     }
     val rawStocks = allStocks.filter(_.size >= 10)
 
-    val factorsPrefix = "/Users/leonardyuan/spark-2.4.5/test_folder/simple-project/data/factors/"
+    val factorsPrefix = "/Users/leonardyuan/codebase/CSYE7200-Final/7200_Final_TechIndex/data/factors/"
     val rawFactors = Array("CrudeOil_Historical_Data.csv", "GLD_Historical_Data.csv", "TLT_Historical_Data.csv" ).
       map(x => new File(factorsPrefix + x)).
       map(readFile)
