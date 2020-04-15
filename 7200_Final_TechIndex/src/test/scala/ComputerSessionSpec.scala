@@ -1,13 +1,35 @@
+import java.time.LocalDate
+import java.io.File
+
 import org.scalatest.FlatSpec
 
 class ComputerSessionSpec  extends FlatSpec{
 
   behavior of "factorMatrix"
   it should "      " in {
-    val array = Array.range(1,10)
-    val double_array = array.map(x=>x.toDouble)
-    val seq_array:Seq[Array[Double]] =  Seq(double_array)
-    val seq2 = seq_array ++ seq_array
+    val readData = new ReadData()
+    val factorsPrefix = "data/factors/"
+
+    val factors1: Seq[Array[(LocalDate, Double)]] =
+      Array("crudeoil.tsv", "us30yeartreasurybonds.tsv").
+        map(x => new File(factorsPrefix + x)).
+          map(readData.readFile)
+
+    val factors2: Seq[Array[(LocalDate, Double)]] =
+      Array("SNP.csv", "NDX.csv").
+        map(x => new File(factorsPrefix + x)).
+          map(readData.readFile)
+
+    val factors: Seq[Array[Double]] = (factors1 ++ factors2). map(readData.trimToRegion(_, start, end)).
+
+    val factorsReturns = factors.map(twoWeekReturns)
+    val factor:Seq[Array[Double]] =
+
+
+
+
+
+
 
   }
 
