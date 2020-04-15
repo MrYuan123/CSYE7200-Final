@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
     <link href="../static/css/main.css" rel="stylesheet" />
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <script src="../static/js/extension/choices.js"></script>
-
   <body>
     <div class="s005">
       <form>
@@ -26,24 +27,49 @@
           </div>
           <div class="suggestion-wrap">
             <span>Insert Single Stock or Portfolio</span>
+{#              <span>{{result}}</span>#}
+              <table id="myTable" class="table" style="background-color: rgba(255,255,255,0.5);">
+                  <thead>
+                  <tr>
+                      <th scope="col">Technology Stock Index</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <th scope="row">Stcok Combination</th>
+                    {% for i in result %}
+                        <td>{{ i }}</td>
+                    {% endfor %}
+                  </tr>
+                  <tr>
+                      <th scope="row">Recommendation</th>
+                      <td>
+                          <i style="font-size: 25px">&#128077</i>
+                      </td>
+                      <td>
+                          <i style="font-size: 25px">&#x1F44E</i>
+                      </td>
+                  </tr>
+                  </tbody>
+
+
+              </table>
           </div>
         </fieldset>
+
       </form>
     </div>
-          <script>
+    <script>
       var textPresetVal = new Choices('#choices-text-preset-values',
       {
         removeItemButton: true,
       });
 
       function printfunc(){
-          vv = document.getElementById("choices-text-preset-values").value;
-          alert(vv);
+          stock_name=document.getElementById("choices-text-preset-values").value;
+          window.location.href="/"+stock_name;
       }
-
     </script>
-
-
     <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
   </body>
 </html>
