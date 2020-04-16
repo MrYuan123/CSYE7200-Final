@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/7200_Final_TechIndex.iml" filepath="$PROJECT_DIR$/.idea/modules/7200_Final_TechIndex.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/7200_Final_TechIndex-build.iml" filepath="$PROJECT_DIR$/.idea/modules/7200_Final_TechIndex-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/root-7200_final_techindex.iml" filepath="$PROJECT_DIR$/.idea/modules/root-7200_final_techindex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/root-7200_final_techindex-build.iml" filepath="$PROJECT_DIR$/.idea/modules/root-7200_final_techindex-build.iml" />
     </modules>
   </component>
 </project>
