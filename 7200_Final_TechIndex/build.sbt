@@ -11,3 +11,5 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-sql" % sparkVersion,
   "org.apache.commons" % "commons-math3" % "3.0"
 )
+
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.1.0" % "test"

@@ -6,8 +6,7 @@ import org.scalatest.{FlatSpec, Matchers}
 
 class ReadDataSpec extends FlatSpec with Matchers {
 
-  behavior of "readFile"
-  it should "read the file get the date and price" in {
+  "readFile" should "read the file get the date and price" in {
 
     val appleFile =  new File("data/stocks/AAPL.csv")
     val appleData = new ReadData().readFile(appleFile)
@@ -17,17 +16,16 @@ class ReadDataSpec extends FlatSpec with Matchers {
   }
 
 
-  behavior of "trimToRegion"
-  it should "get the data in the time we want" in {
+  "trimToRegion" should "get the data in the time we want" in {
     val readData = new ReadData()
     val appleFilename = "data/stocks/AAPL.csv"
     val appleFile  = new File(appleFilename)
     val appleData = readData.readFile(appleFile)
 
-    val formatter = DateTimeFormatter.ofPattern("d-MMM-yy");
-    val dateStrN1 = "1-Jan-18";
-    val dateStrN2 = "5-Apr-18";
-    val dateN1 = LocalDate.parse(dateStrN1, formatter);
+    val formatter = DateTimeFormatter.ofPattern("d-MMM-yy")
+    val dateStrN1 = "1-Jan-18"
+    val dateStrN2 = "5-Apr-18"
+    val dateN1 = LocalDate.parse(dateStrN1, formatter)
     val dateN2 = LocalDate.parse(dateStrN2, formatter)
     val trim = readData.trimToRegion(appleData, dateN1,dateN2)
 
