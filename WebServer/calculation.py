@@ -11,6 +11,7 @@ class calculation(object):
             totaltrans += nowtrans
 
         return sum/totaltrans
+# Test data
 # if __name__ == "__main__":
 #     obj = calculation()
 #     #data format:
