@@ -1,9 +1,36 @@
 # CSYE7200-Final
+<img src="https://img.shields.io/badge/build-Success-green"> <img src="https://img.shields.io/badge/Version-1.0.0-orange"> <img src="https://img.shields.io/badge/test-pass-brightgreen">
+
+## 1. Abstract
+
+- Design a concept named Technology Stock Index which can measure the risk and investment value of the technology stocks
+
+- Estimating the risk of a portfolio investment and provide reference for stocks investor
+
+- nvestor can input the portfolio investment and our system will generate risk expectations for these stocks and the values of Technology Stock Index
+
+- The System will recommend you that whether this combination is worth
+
+## 2. Methodology
+
+- We are going to collect daily stocks data of 8 important technology companies during 3+ yrs. Parse Data and make data cleaning(ETL process)
+Design and implement the algorithm models(For single company)
+
+- Design and implement the model for Technology Stock Index
+ - Data cleaning: parse, filter and transform
+ - Value of Risk Algorithm Model
+ - Technology Stock Index Algorithm Model
+ - Result Integration and Visualization
+
+- Train the models on Spark
+ - Package the project as `.jar` file
+ - run `spark-submit` command to perform the project
+
+- Implement the result integration and visualization
+ - use `Redis` to cache the data
+ - Use `Flask` to implement the Web Application
 
 ## 3.How to Run
-<img src="https://img.shields.io/badge/build-Success-green">
-<img src="https://img.shields.io/badge/Version-1.0.0-orange">
-<img src="https://img.shields.io/badge/test-pass-brightgreen">
 
 - Download the Spark(Prebuild for Hadoop) `version:2.4.5`: [Spark Download Link](https://spark.apache.org/downloads.html?S_TACT=100DY3BW)
 
